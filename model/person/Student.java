@@ -16,6 +16,7 @@ public class Student extends Person {
     private boolean internshipCompleted = false;
     private boolean TA = false;
 
+
     public Student(int id, String fullName, String address, String phone, String email, LocalDate dateOfBirth, String major, StudentDegree type, ArrayList<Course> courses, ArrayList<Double> GPAs, int semester, String thesisTitle, boolean internshipCompleted, boolean TA) {
         super(id, fullName, address, phone, email, dateOfBirth);
         this.major = major;
@@ -27,6 +28,8 @@ public class Student extends Person {
         this.internshipCompleted = internshipCompleted;
         this.TA = TA;
     }
+
+
 
     public String getMajor() { return major; }
     public ArrayList<Double> getGPAs() { return GPAs; }
@@ -55,9 +58,7 @@ public class Student extends Person {
     }
 
     // Can be moved to StudentService.java
-    public boolean withdrawFromCourse(int courseId) {
-        return courses.removeIf(course -> course.getCourseCode() == courseId);
-    }
+
 
     public double getCGPA() {
         double sum = 0;

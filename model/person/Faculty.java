@@ -27,10 +27,24 @@ public class Faculty extends Person {
         this.hireDate = hireDate;
         this.coursesTaught = new ArrayList<>();
     }
+    public Faculty(int id, String fullName, String address, String phone, String email, LocalDate dateOfBirth,
+                   School school, Department department, FacultyType position, Room office, LocalDate hireDate,
+                   ArrayList<Course> coursesTaught, boolean programDirector, boolean dean) {
+        super(id, fullName, address, phone, email, dateOfBirth);
+        this.school = school;
+        this.department = department;
+        this.position = position;
+        this.office = office;
+        this.hireDate = hireDate;
+        this.coursesTaught = (coursesTaught != null) ? new ArrayList<>(coursesTaught) : new ArrayList<>();
+        this.programDirector = programDirector;
+        this.dean = dean;
+    }
 
     public Faculty(int id, String fullName, LocalDate dateOfBirth) {
         super(id, fullName, dateOfBirth);
     }
+
 
     public School getSchool() { return school; }
     public Department getDepartment() { return department; }

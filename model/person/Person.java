@@ -1,15 +1,20 @@
 package model.person;
 
+import model.Course;
+import util.Enums;
+
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.ArrayList;
 
-public abstract class Person {
+public class Person {
     private final int id;
     private final String fullName;
     private String address;
     private String phone;
     private String email;
     private final LocalDate dateOfBirth;
+
 
     protected Person(int id, String fullName, String address, String phone, String email, LocalDate dateOfBirth) {
         this.id = id;
@@ -20,11 +25,15 @@ public abstract class Person {
         this.dateOfBirth = dateOfBirth;
     }
 
-    protected Person(int id, String fullName, LocalDate dateOfBirth) {
+    public Person(int id, String fullName, LocalDate dateOfBirth)
+    {
+
         this.id = id;
         this.fullName = fullName;
         this.dateOfBirth = dateOfBirth;
     }
+
+
 
     // Getters
     public int getId() { return id; }
@@ -50,6 +59,7 @@ public abstract class Person {
         Person person = (Person) o;
         return id == person.id; // id is unique
     }
+
 
     @Override
     public String toString() {
